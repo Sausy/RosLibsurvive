@@ -37,11 +37,11 @@ void tracker_pose_process(SurviveObject *so, survive_long_timecode timecode, con
 
 //SurviveContext *ctx, uint8_t lighthouse, SurvivePose *lighthouse_pose
 //SurviveContext *tctx, uint8_t lighthouse,SurvivePose *pose, SurvivePose *obj_pose
-void lighthouse_pose_process(SurviveContext *ctx, uint8_t lighthouse, SurvivePose *lighthouse_pose)
+void lighthouse_pose_process(SurviveContext *ctx, uint8_t lighthouse, SurvivePose *pose)
 {
   //survive_default_lighthouse_pose_process(tctx, lighthouse, pose, obj_pose);
 
-  survive_default_lighthouse_pose_process(tctx, lighthouse, pose);
+  survive_default_lighthouse_pose_process(ctx, lighthouse, pose);
  // lighthouse_process(ctc,lighthouse,pose,obj_pose);
 
   lighthouse_pose.pose.position.x = pose->Pos[0];
