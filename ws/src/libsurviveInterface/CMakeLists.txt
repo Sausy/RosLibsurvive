@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(camerasterio)
 
+message("PROJECT_SOURCE_DIR: ${PROJECT_SOURCE_DIR}")
 #SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 #SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
 #set(CMAKE_CXX_STANDARD 14)
@@ -27,9 +28,16 @@ include_directories(
         ${catkin_INCLUDE_DIRS}
         )
 
+#==== LIBSURVIVE ====
+#LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/
+include_directories(
+${PROJECT_SOURCE_DIR}/../../../libsurvive/include/libsurvive
+${PROJECT_SOURCE_DIR}/../../../libsurvive/redist
+)
 
-add_subdirectory (include/mathUtils)
-
+set(LIBS_SURVIVE
+${PROJECT_SOURCE_DIR}/../../../libsurvive/bin/*.so
+)
 #==============================================================================
 # Main Project files
 #==============================================================================
@@ -66,4 +74,4 @@ add_dependencies(${PROJECT_NAME}
   ${catkin_EXPORTED_TARGETS}
 )
 
-target_link_libraries( ${PROJECT_NAME} -lpthread -lrt ${catkin_LIBRARIES} )
+target_link_libraries( ${PROJECT_NAME} -lpthread -lrt ${catkin_LIBRARIES} ${LIBS_SURVIVE})

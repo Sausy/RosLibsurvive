@@ -21,7 +21,7 @@ ros::Publisher lighthouse_initial_pose_publisher;
 
 void tracker_pose_process(SurviveObject *so, uint32_t timecode, SurvivePose *pose)
 {
-  survive_default_raw_pose_process(so, timecode, pose);
+  //survive_default_raw_pose_process(so, timecode, pose);
   tracker_pose.pose.position.x = pose->Pos[0];
   tracker_pose.pose.position.y = pose->Pos[1];
   tracker_pose.pose.position.z = pose->Pos[2];
@@ -34,7 +34,11 @@ void tracker_pose_process(SurviveObject *so, uint32_t timecode, SurvivePose *pos
 
 void lighthouse_pose_process(SurviveContext *tctx, uint8_t lighthouse,SurvivePose *pose, SurvivePose *obj_pose)
 {
-  survive_default_lighthouse_pose_process(tctx, lighthouse, pose, obj_pose);
+  //survive_default_lighthouse_pose_process(tctx, lighthouse, pose, obj_pose);
+
+  survive_default_lighthouse_pose_process(tctx, lighthouse, pose);
+ // lighthouse_process(ctc,lighthouse,pose,obj_pose);
+
   lighthouse_pose.pose.position.x = pose->Pos[0];
   lighthouse_pose.pose.position.y = pose->Pos[1];
   lighthouse_pose.pose.position.z = pose->Pos[2];
