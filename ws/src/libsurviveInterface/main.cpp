@@ -19,8 +19,11 @@ geometry_msgs::TransformStamped transformStamped_world_lh,transformStamped_lh_tr
 ros::Publisher pose_publisher;
 ros::Publisher lighthouse_initial_pose_publisher;
 
-void tracker_pose_process(SurviveObject *so, uint32_t timecode, SurvivePose *pose)
+//SurviveObject *so, survive_long_timecode timecode, const SurvivePose *pose
+//SurviveObject *so, uint32_t timecode, SurvivePose *pose
+void tracker_pose_process(SurviveObject *so, survive_long_timecode timecode, const SurvivePose *pose)
 {
+  survive_default_pose_process(so, timecode, pose);
   //survive_default_raw_pose_process(so, timecode, pose);
   tracker_pose.pose.position.x = pose->Pos[0];
   tracker_pose.pose.position.y = pose->Pos[1];
@@ -32,7 +35,9 @@ void tracker_pose_process(SurviveObject *so, uint32_t timecode, SurvivePose *pos
   //printf("Pose: [%s][% 02.2f,% 02.2f,% 02.2f] [% 02.2f,% 02.2f,% 02.2f,% 02.2f]\n", so->codename, pose->Pos[0], pose->Pos[1], pose->Pos[2], pose->Rot[0], pose->Rot[1], pose->Rot[2], pose->Rot[3]);
 }
 
-void lighthouse_pose_process(SurviveContext *tctx, uint8_t lighthouse,SurvivePose *pose, SurvivePose *obj_pose)
+//SurviveContext *ctx, uint8_t lighthouse, SurvivePose *lighthouse_pose
+//SurviveContext *tctx, uint8_t lighthouse,SurvivePose *pose, SurvivePose *obj_pose
+void lighthouse_pose_process(SurviveContext *ctx, uint8_t lighthouse, SurvivePose *lighthouse_pose)
 {
   //survive_default_lighthouse_pose_process(tctx, lighthouse, pose, obj_pose);
 
