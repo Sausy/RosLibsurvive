@@ -105,7 +105,7 @@ camerasterio_EXTERNAL_OBJECTS =
 /home/sausy/Projects/lighthouse/RosLibsurvive/ws/devel/lib/camerasterio/camerasterio: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 /home/sausy/Projects/lighthouse/RosLibsurvive/ws/devel/lib/camerasterio/camerasterio: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/sausy/Projects/lighthouse/RosLibsurvive/ws/devel/lib/camerasterio/camerasterio: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/sausy/Projects/lighthouse/RosLibsurvive/ws/devel/lib/camerasterio/camerasterio: /home/sausy/Projects/lighthouse/RosLibsurvive/ws/src/libsurviveInterface/../../../libsurvive/bin/*.so
+/home/sausy/Projects/lighthouse/RosLibsurvive/ws/devel/lib/camerasterio/camerasterio: /home/sausy/Projects/lighthouse/RosLibsurvive/ws/src/libsurviveInterface/../../../libsurvive/bin/libsurvive.so
 /home/sausy/Projects/lighthouse/RosLibsurvive/ws/devel/lib/camerasterio/camerasterio: libsurviveInterface/CMakeFiles/camerasterio.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/sausy/Projects/lighthouse/RosLibsurvive/ws/devel/lib/camerasterio/camerasterio"
 	cd /home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/libsurviveInterface && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/camerasterio.dir/link.txt --verbose=$(VERBOSE)

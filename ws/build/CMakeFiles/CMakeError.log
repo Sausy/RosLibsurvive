@@ -1,24 +1,24 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_b1bec/fast && /usr/bin/make -f CMakeFiles/cmTC_b1bec.dir/build.make CMakeFiles/cmTC_b1bec.dir/build
+Run Build Command(s):/usr/bin/make cmTC_232bb/fast && /usr/bin/make -f CMakeFiles/cmTC_232bb.dir/build.make CMakeFiles/cmTC_232bb.dir/build
 make[1]: Entering directory '/home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b1bec.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b1bec.dir/src.c.o   -c /home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_b1bec
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1bec.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_b1bec.dir/src.c.o  -o cmTC_b1bec 
-CMakeFiles/cmTC_b1bec.dir/src.c.o: In function `main':
+Building C object CMakeFiles/cmTC_232bb.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_232bb.dir/src.c.o   -c /home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_232bb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_232bb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_232bb.dir/src.c.o  -o cmTC_232bb 
+CMakeFiles/cmTC_232bb.dir/src.c.o: In function `main':
 src.c:(.text+0x3e): undefined reference to `pthread_create'
 src.c:(.text+0x4a): undefined reference to `pthread_detach'
 src.c:(.text+0x5b): undefined reference to `pthread_join'
 src.c:(.text+0x6f): undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_b1bec.dir/build.make:86: recipe for target 'cmTC_b1bec' failed
-make[1]: *** [cmTC_b1bec] Error 1
+CMakeFiles/cmTC_232bb.dir/build.make:86: recipe for target 'cmTC_232bb' failed
+make[1]: *** [cmTC_232bb] Error 1
 make[1]: Leaving directory '/home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles/CMakeTmp'
-Makefile:121: recipe for target 'cmTC_b1bec/fast' failed
-make: *** [cmTC_b1bec/fast] Error 2
+Makefile:121: recipe for target 'cmTC_232bb/fast' failed
+make: *** [cmTC_232bb/fast] Error 2
 
 
 Source file was:
@@ -44,20 +44,20 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_695f6/fast && /usr/bin/make -f CMakeFiles/cmTC_695f6.dir/build.make CMakeFiles/cmTC_695f6.dir/build
+Run Build Command(s):/usr/bin/make cmTC_f56ef/fast && /usr/bin/make -f CMakeFiles/cmTC_f56ef.dir/build.make CMakeFiles/cmTC_f56ef.dir/build
 make[1]: Entering directory '/home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_695f6.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_695f6.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.15/Modules/CheckFunctionExists.c
-Linking C executable cmTC_695f6
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_695f6.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_695f6.dir/CheckFunctionExists.c.o  -o cmTC_695f6 -lpthreads 
+Building C object CMakeFiles/cmTC_f56ef.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f56ef.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f56ef
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f56ef.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_f56ef.dir/CheckFunctionExists.c.o  -o cmTC_f56ef -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_695f6.dir/build.make:86: recipe for target 'cmTC_695f6' failed
-make[1]: *** [cmTC_695f6] Error 1
+CMakeFiles/cmTC_f56ef.dir/build.make:86: recipe for target 'cmTC_f56ef' failed
+make[1]: *** [cmTC_f56ef] Error 1
 make[1]: Leaving directory '/home/sausy/Projects/lighthouse/RosLibsurvive/ws/build/CMakeFiles/CMakeTmp'
-Makefile:121: recipe for target 'cmTC_695f6/fast' failed
-make: *** [cmTC_695f6/fast] Error 2
+Makefile:121: recipe for target 'cmTC_f56ef/fast' failed
+make: *** [cmTC_f56ef/fast] Error 2
 
 
 

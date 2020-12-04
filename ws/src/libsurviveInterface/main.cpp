@@ -25,6 +25,7 @@ void tracker_pose_process(SurviveObject *so, survive_long_timecode timecode, con
 {
   survive_default_pose_process(so, timecode, pose);
   //survive_default_raw_pose_process(so, timecode, pose);
+
   tracker_pose.pose.position.x = pose->Pos[0];
   tracker_pose.pose.position.y = pose->Pos[1];
   tracker_pose.pose.position.z = pose->Pos[2];
@@ -32,7 +33,9 @@ void tracker_pose_process(SurviveObject *so, survive_long_timecode timecode, con
   tracker_pose.pose.orientation.y = pose->Rot[1];
   tracker_pose.pose.orientation.z = pose->Rot[2];
   tracker_pose.pose.orientation.w = pose->Rot[3];
-  //printf("Pose: [%s][% 02.2f,% 02.2f,% 02.2f] [% 02.2f,% 02.2f,% 02.2f,% 02.2f]\n", so->codename, pose->Pos[0], pose->Pos[1], pose->Pos[2], pose->Rot[0], pose->Rot[1], pose->Rot[2], pose->Rot[3]);
+
+
+  printf("Pose: [%s][% 02.2f,% 02.2f,% 02.2f] [% 02.2f,% 02.2f,% 02.2f,% 02.2f]\n", so->codename, pose->Pos[0], pose->Pos[1], pose->Pos[2], pose->Rot[0], pose->Rot[1], pose->Rot[2], pose->Rot[3]);
 }
 
 //SurviveContext *ctx, uint8_t lighthouse, SurvivePose *lighthouse_pose
@@ -44,6 +47,7 @@ void lighthouse_pose_process(SurviveContext *ctx, uint8_t lighthouse, SurvivePos
   survive_default_lighthouse_pose_process(ctx, lighthouse, pose);
  // lighthouse_process(ctc,lighthouse,pose,obj_pose);
 
+
   lighthouse_pose.pose.position.x = pose->Pos[0];
   lighthouse_pose.pose.position.y = pose->Pos[1];
   lighthouse_pose.pose.position.z = pose->Pos[2];
@@ -51,7 +55,8 @@ void lighthouse_pose_process(SurviveContext *ctx, uint8_t lighthouse, SurvivePos
   lighthouse_pose.pose.orientation.y = pose->Rot[1];
   lighthouse_pose.pose.orientation.z = pose->Rot[2];
   lighthouse_pose.pose.orientation.w = pose->Rot[3];
-  //printf("LH Pose: [%d][% 02.2f,% 02.2f,% 02.2f] [% 02.2f,% 02.2f,% 02.2f,% 02.2f]\n", lighthouse, pose->Pos[0], pose->Pos[1], pose->Pos[2], pose->Rot[0], pose->Rot[1], pose->Rot[2], pose->Rot[3]);
+
+  printf("LH Pose: [%d][% 02.2f,% 02.2f,% 02.2f] [% 02.2f,% 02.2f,% 02.2f,% 02.2f]\n", lighthouse, pose->Pos[0], pose->Pos[1], pose->Pos[2], pose->Rot[0], pose->Rot[1], pose->Rot[2], pose->Rot[3]);
 }
 
 void tracker_pose_tf()
@@ -96,12 +101,16 @@ int main(int argc, char** argv)
   struct SurviveContext * ctx;
   bool calibrate;
   std::string config_file;
-  std::string nspace(getenv("ROS_NAMESPACE"));
 
+  std::string nspace = "dev0";  //(std::getenv("ROS_NAMESPACE"));
+
+  std::cout << "\n2" << std::flush;
   if (nspace.empty()){
         throw std::runtime_error("Could not find namespace. Check if ROS_NAMESPACE is defined");
 	return 1;
   }
+
+  std::cout << "\nINIT Ros" << std::flush;
 
   // Initialize ROS
   ros::init(argc, argv, "vive_tracker",ros::init_options::AnonymousName);

@@ -36,7 +36,7 @@ ${PROJECT_SOURCE_DIR}/../../../libsurvive/redist
 )
 
 set(LIBS_SURVIVE
-${PROJECT_SOURCE_DIR}/../../../libsurvive/bin/*.so
+${PROJECT_SOURCE_DIR}/../../../libsurvive/bin/libsurvive.so
 )
 #==============================================================================
 # Main Project files
@@ -74,4 +74,4 @@ add_dependencies(${PROJECT_NAME}
   ${catkin_EXPORTED_TARGETS}
 )
 
-target_link_libraries( ${PROJECT_NAME} -lpthread -lrt ${catkin_LIBRARIES} ${LIBS_SURVIVE})
+target_link_libraries( ${PROJECT_NAME} -lrt ${catkin_LIBRARIES} ${LIBS_SURVIVE})
